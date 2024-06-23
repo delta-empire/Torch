@@ -30,31 +30,26 @@ public class TorchActivity extends AppCompatActivity {
         ivTorchOn = findViewById(R.id.ivTorchOn);
         ivTorchOff = findViewById(R.id.ivTorchOff);
 
-        ivTorchOn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    torchOff();
-                    ivTorchOn.setVisibility(View.INVISIBLE);
-                    ivTorchOff.setVisibility(View.VISIBLE);
-                } catch (CameraAccessException e) {
-                    throw new RuntimeException(e);
-                }
+        ivTorchOn.setOnClickListener(v -> {
+            try {
+                torchOff();
+                ivTorchOn.setVisibility(View.INVISIBLE);
+                ivTorchOff.setVisibility(View.VISIBLE);
+            } catch (CameraAccessException e) {
+                throw new RuntimeException(e);
             }
         });
 
-        ivTorchOff.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    torchOn();
-                    ivTorchOff.setVisibility(View.INVISIBLE);
-                    ivTorchOn.setVisibility(View.VISIBLE);
-                } catch (CameraAccessException e) {
-                    throw new RuntimeException(e);
-                }
+        ivTorchOff.setOnClickListener(v -> {
+            try {
+                torchOn();
+                ivTorchOff.setVisibility(View.INVISIBLE);
+                ivTorchOn.setVisibility(View.VISIBLE);
+            } catch (CameraAccessException e) {
+                throw new RuntimeException(e);
             }
         });
+
     }
 
     private void torchOn() throws CameraAccessException {

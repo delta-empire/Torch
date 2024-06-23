@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Torch</string>
+    <string name="Settings">Настройки</string>
+    <string name="Torch">Фонарик</string>
+    <string name="Morse">Морзе</string>
+    <string name="Compass">Компасс</string>
 </resources>
